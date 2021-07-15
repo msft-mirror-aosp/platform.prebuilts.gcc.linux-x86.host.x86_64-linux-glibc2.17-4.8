@@ -218,14 +218,10 @@ add_ubuntu_package \
     libpulse0 \
     libpulse-dev
 
-# ZLib and others.
+# ZLib (TODO: remove this and make sure we always use external/zlib!)
 add_ubuntu_package \
     zlib1g \
-    zlib1g-dev \
-    libncurses5 \
-    libncurses5-dev \
-    libtinfo5 \
-    libtinfo-dev
+    zlib1g-dev
 
 
 
