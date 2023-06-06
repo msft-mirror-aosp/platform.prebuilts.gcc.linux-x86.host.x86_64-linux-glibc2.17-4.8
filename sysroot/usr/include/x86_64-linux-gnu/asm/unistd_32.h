@@ -349,5 +349,6 @@
 #define __NR_kcmp 349
 #define __NR_finit_module 350
 #define __NR_bpf 357
+#define __NR_copy_file_range 377
 
 #endif /* _ASM_X86_UNISTD_32_H */
