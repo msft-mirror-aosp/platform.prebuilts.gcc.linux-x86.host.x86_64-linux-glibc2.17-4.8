@@ -252,7 +252,8 @@ typedef struct
 #define EM_AARCH64	183		/* ARM AARCH64 */
 #define EM_TILEPRO	188		/* Tilera TILEPro */
 #define EM_TILEGX	191		/* Tilera TILE-Gx */
-#define EM_NUM		192
+#define EM_RISCV	243
+#define EM_NUM		244
 
 /* If it is necessary to assign new unofficial EM_* values, please
    pick large random numbers (0x8523, 0xa7f2, etc.) to minimize the
@@ -3073,6 +3074,7 @@ typedef Elf32_Addr Elf32_Conflict;
 
 #define R_TILEGX_NUM		130
 
+#define ELFCOMPRESS_ZLIB 1
 
 __END_DECLS
 
