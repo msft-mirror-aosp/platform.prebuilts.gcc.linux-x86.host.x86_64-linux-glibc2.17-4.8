@@ -43,6 +43,7 @@
 #define O_RDONLY	     00
 #define O_WRONLY	     01
 #define O_RDWR		     02
+#define O_TMPFILE          020200000
 #ifndef O_CREAT
 # define O_CREAT	   0100	/* Not fcntl.  */
 #endif
