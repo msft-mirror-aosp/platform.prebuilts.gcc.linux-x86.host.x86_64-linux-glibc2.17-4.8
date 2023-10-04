@@ -111,3 +111,7 @@
 # define POSIX_MADV_WILLNEED	3 /* Will need these pages.  */
 # define POSIX_MADV_DONTNEED	4 /* Don't need these pages.  */
 #endif
+
+#define MFD_CLOEXEC 1U
+#define MFD_ALLOW_SEALING 2U
+#define MFD_HUGETLB 4U
