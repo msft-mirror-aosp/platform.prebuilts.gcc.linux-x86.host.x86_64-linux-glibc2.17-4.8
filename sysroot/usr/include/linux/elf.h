@@ -395,7 +395,39 @@ typedef struct elf64_shdr {
 #define NT_ARM_TLS	0x401		/* ARM TLS register */
 #define NT_ARM_HW_BREAK	0x402		/* ARM hardware breakpoint registers */
 #define NT_ARM_HW_WATCH	0x403		/* ARM hardware watchpoint registers */
+#define NT_ARM_SYSTEM_CALL	0x404	/* ARM system call number */
+#define NT_ARM_SVE	0x405		/* ARM Scalable Vector Extension
+					   registers */
+#define NT_ARM_PAC_MASK	0x406		/* ARM pointer authentication
+					   code masks.  */
+#define NT_ARM_PACA_KEYS	0x407	/* ARM pointer authentication
+					   address keys.  */
+#define NT_ARM_PACG_KEYS	0x408	/* ARM pointer authentication
+					   generic key.  */
+#define NT_ARM_TAGGED_ADDR_CTRL	0x409	/* AArch64 tagged address
+					   control.  */
+#define NT_ARM_PAC_ENABLED_KEYS	0x40a	/* AArch64 pointer authentication
+					   enabled keys.  */
+#define NT_VMCOREDD	0x700		/* Vmcore Device Dump Note.  */
+#define NT_MIPS_DSP	0x800		/* MIPS DSP ASE registers.  */
+#define NT_MIPS_FP_MODE	0x801		/* MIPS floating-point mode.  */
+#define NT_MIPS_MSA	0x802		/* MIPS SIMD registers.  */
+#define NT_RISCV_CSR	0x900		/* RISC-V Control and Status Registers */
+#define NT_RISCV_VECTOR	0x901		/* RISC-V vector registers */
+#define NT_LOONGARCH_CPUCFG	0xa00	/* LoongArch CPU config registers.  */
+#define NT_LOONGARCH_CSR	0xa01	/* LoongArch control and
+					   status registers.  */
+#define NT_LOONGARCH_LSX	0xa02	/* LoongArch Loongson SIMD
+					   Extension registers.  */
+#define NT_LOONGARCH_LASX	0xa03	/* LoongArch Loongson Advanced
+					   SIMD Extension registers.  */
+#define NT_LOONGARCH_LBT	0xa04	/* LoongArch Loongson Binary
+					   Translation registers.  */
+#define NT_LOONGARCH_HW_BREAK	0xa05   /* LoongArch hardware breakpoint registers */
+#define NT_LOONGARCH_HW_WATCH	0xa06   /* LoongArch hardware watchpoint registers */
 
+/* Note types with note name "GNU" */
+#define NT_GNU_PROPERTY_TYPE_0	5
 
 /* Note header in a PT_NOTE section */
 typedef struct elf32_note {
