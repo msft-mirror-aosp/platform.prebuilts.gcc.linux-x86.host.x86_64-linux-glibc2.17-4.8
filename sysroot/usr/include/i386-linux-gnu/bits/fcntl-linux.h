@@ -96,9 +96,6 @@
 #ifndef __O_DSYNC
 # define __O_DSYNC	 010000
 #endif
-#ifndef __O_TMPFILE
-# define __O_TMPFILE   (020000000 | __O_DIRECTORY)
-#endif
 
 #ifndef F_GETLK
 # ifndef __USE_FILE_OFFSET64
@@ -131,7 +128,6 @@
 # define O_DIRECT	__O_DIRECT	/* Direct disk access.	*/
 # define O_NOATIME	__O_NOATIME	/* Do not set atime.  */
 # define O_PATH		__O_PATH	/* Resolve pathname but do not open file.  */
-# define O_TMPFILE	__O_TMPFILE	/* Atomically create nameless file.  */
 #endif
 
 /* For now, Linux has no separate synchronicitiy options for read
