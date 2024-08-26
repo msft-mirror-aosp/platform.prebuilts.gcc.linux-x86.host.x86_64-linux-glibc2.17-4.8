@@ -188,8 +188,10 @@ enum
 # define ILL_PRVREG	ILL_PRVREG
   ILL_COPROC,			/* Coprocessor error.  */
 # define ILL_COPROC	ILL_COPROC
-  ILL_BADSTK			/* Internal stack error.  */
+  ILL_BADSTK,			/* Internal stack error.  */
 # define ILL_BADSTK	ILL_BADSTK
+  ILL_BADIADDR,			/* Unimplemented instruction address.  */
+# define ILL_BADIADDR ILL_BADIADDR
 };
 
 /* `si_code' values for SIGFPE signal.  */
@@ -209,8 +211,12 @@ enum
 # define FPE_FLTRES	FPE_FLTRES
   FPE_FLTINV,			/* Floating point invalid operation.  */
 # define FPE_FLTINV	FPE_FLTINV
-  FPE_FLTSUB			/* Subscript out of range.  */
+  FPE_FLTSUB,			/* Subscript out of range.  */
 # define FPE_FLTSUB	FPE_FLTSUB
+  FPE_FLTUNK = 14,		/* Undiagnosed floating-point exception.  */
+# define FPE_FLTUNK	FPE_FLTUNK
+  FPE_CONDTRAP,			/* Trap on condition.  */
+# define FPE_CONDTRAP	FPE_CONDTRAP
 };
 
 /* `si_code' values for SIGSEGV signal.  */
@@ -218,8 +224,22 @@ enum
 {
   SEGV_MAPERR = 1,		/* Address not mapped to object.  */
 # define SEGV_MAPERR	SEGV_MAPERR
-  SEGV_ACCERR			/* Invalid permissions for mapped object.  */
+  SEGV_ACCERR,			/* Invalid permissions for mapped object.  */
 # define SEGV_ACCERR	SEGV_ACCERR
+  SEGV_BNDERR,			/* Bounds checking failure.  */
+# define SEGV_BNDERR	SEGV_BNDERR
+  SEGV_PKUERR,			/* Protection key checking failure.  */
+# define SEGV_PKUERR	SEGV_PKUERR
+  SEGV_ACCADI,			/* ADI not enabled for mapped object.  */
+# define SEGV_ACCADI	SEGV_ACCADI
+  SEGV_ADIDERR,			/* Disrupting MCD error.  */
+# define SEGV_ADIDERR	SEGV_ADIDERR
+  SEGV_ADIPERR,			/* Precise MCD exception.  */
+# define SEGV_ADIPERR	SEGV_ADIPERR
+  SEGV_MTEAERR,			/* Asynchronous ARM MTE error.  */
+# define SEGV_MTEAERR	SEGV_MTEAERR
+  SEGV_MTESERR,			/* Synchronous ARM MTE exception.  */
+# define SEGV_MTESERR	SEGV_MTESERR
 };
 
 /* `si_code' values for SIGBUS signal.  */
@@ -229,8 +249,12 @@ enum
 # define BUS_ADRALN	BUS_ADRALN
   BUS_ADRERR,			/* Non-existant physical address.  */
 # define BUS_ADRERR	BUS_ADRERR
-  BUS_OBJERR			/* Object specific hardware error.  */
+  BUS_OBJERR,			/* Object specific hardware error.  */
 # define BUS_OBJERR	BUS_OBJERR
+  BUS_MCEERR_AR,		/* Hardware memory error: action required.  */
+# define BUS_MCEERR_AR	BUS_MCEERR_AR
+  BUS_MCEERR_AO,		/* Hardware memory error: action optional.  */
+# define BUS_MCEERR_AO	BUS_MCEERR_AO
 };
 
 /* `si_code' values for SIGTRAP signal.  */
@@ -238,8 +262,14 @@ enum
 {
   TRAP_BRKPT = 1,		/* Process breakpoint.  */
 # define TRAP_BRKPT	TRAP_BRKPT
-  TRAP_TRACE			/* Process trace trap.  */
+  TRAP_TRACE,			/* Process trace trap.  */
 # define TRAP_TRACE	TRAP_TRACE
+  TRAP_BRANCH,			/* Process taken branch trap.  */
+# define TRAP_BRANCH	TRAP_BRANCH
+  TRAP_HWBKPT,			/* Hardware breakpoint/watchpoint.  */
+# define TRAP_HWBKPT	TRAP_HWBKPT
+  TRAP_UNK,			/* Undiagnosed trap.  */
+# define TRAP_UNK	TRAP_UNK
 };
 
 /* `si_code' values for SIGCHLD signal.  */
