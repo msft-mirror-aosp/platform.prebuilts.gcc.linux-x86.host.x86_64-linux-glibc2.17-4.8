@@ -22,3 +22,9 @@ filegroup {
     name: "gcc.sysroot",
     srcs: ["sysroot/**/*"],
 }
+
+dirgroup {
+    name: "trusty_dirgroup_prebuilts_gcc_linux-x86_host_x86_64-linux-glibc2.17-4.8",
+    dirs: ["."],
+    visibility: ["//trusty/vendor/google/aosp/scripts"],
+}
