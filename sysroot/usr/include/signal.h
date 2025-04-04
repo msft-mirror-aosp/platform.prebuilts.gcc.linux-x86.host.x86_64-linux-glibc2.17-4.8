@@ -217,6 +217,12 @@ typedef __sighandler_t sighandler_t;
 typedef __sighandler_t sig_t;
 #endif
 
+/* Android change: match bionic and musl. */
+#if defined(__USE_GNU) || defined(__USE_BSD)
+#define SYS_SECCOMP 1
+#define SYS_USER_DISPATCH 2
+#endif
+
 #ifdef __USE_POSIX
 
 /* Clear all signals from SET.  */
