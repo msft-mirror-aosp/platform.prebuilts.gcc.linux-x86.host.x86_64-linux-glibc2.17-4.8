@@ -61,6 +61,14 @@ __BEGIN_NAMESPACE_STD
 /* Set N bytes of S to C.  */
 extern void *memset (void *__s, int __c, size_t __n) __THROW __nonnull ((1));
 
+/** C23 addition, copied from bionic for portability. */
+static __inline void* memset_explicit(void* __dst, int __ch, size_t __n) {
+  void* result = memset(__dst, __ch, __n);
+  // https://bugs.llvm.org/show_bug.cgi?id=15495
+  __asm__ __volatile__("" : : "r"(__dst) : "memory");
+  return result;
+}
+
 /* Compare N bytes of S1 and S2.  */
 extern int memcmp (const void *__s1, const void *__s2, size_t __n)
      __THROW __attribute_pure__ __nonnull ((1, 2));
