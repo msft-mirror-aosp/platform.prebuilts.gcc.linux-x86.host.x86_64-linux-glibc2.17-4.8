@@ -47,3 +47,22 @@ alias(
     actual = ":bin_dirs",
     visibility = ["@kleaf_clang_toolchain//:__subpackages__"],
 )
+
+filegroup(
+    name = "sysroot_files",
+    srcs = glob(
+        ["sysroot/**"],
+        allow_empty = False,
+    ),
+    visibility = [
+        "@kleaf_clang_toolchain//:__subpackages__",
+    ],
+)
+
+filegroup(
+    name = "sysroot_dir",
+    srcs = ["sysroot"],
+    visibility = [
+        "@kleaf_clang_toolchain//:__subpackages__",
+    ],
+)
