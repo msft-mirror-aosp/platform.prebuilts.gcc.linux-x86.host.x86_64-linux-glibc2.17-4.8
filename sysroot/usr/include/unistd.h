@@ -24,6 +24,8 @@
 
 #include <features.h>
 
+#include <errno.h> /* Android-added for TEMP_FAILURE_RETRY(). */
+
 __BEGIN_DECLS
 
 /* These may be used to determine what facilities are present at compile time.
