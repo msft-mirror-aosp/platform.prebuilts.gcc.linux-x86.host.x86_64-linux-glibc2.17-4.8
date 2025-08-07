@@ -7,8 +7,7 @@
  *===-----------------------------------------------------------------------===
  */
 
-#ifndef __CLANG_STDATOMIC_H
-#define __CLANG_STDATOMIC_H
+#pragma once
 
 /* If we're hosted, fall back to the system's stdatomic.h. FreeBSD, for
  * example, already has a Clang-compatible stdatomic.h header.
@@ -48,11 +47,8 @@ extern "C" {
 #define ATOMIC_POINTER_LOCK_FREE    __CLANG_ATOMIC_POINTER_LOCK_FREE
 
 /* 7.17.2 Initialization */
-#if (defined(__STDC_VERSION__) && __STDC_VERSION__ < 202311L) ||               \
-    defined(__cplusplus)
-/* ATOMIC_VAR_INIT was removed in C23, but still remains in C++23. */
+/* Android: Continue providing ATOMIC_VAR_INIT in C23 mode and above. */
 #define ATOMIC_VAR_INIT(value) (value)
-#endif
 
 #if ((defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201710L &&              \
       __STDC_VERSION__ < 202311L) ||                                           \
@@ -200,5 +196,3 @@ void atomic_flag_clear_explicit(volatile atomic_flag *, memory_order);
 #endif
 
 #endif /* __STDC_HOSTED__ */
-#endif /* __CLANG_STDATOMIC_H */
-
