@@ -1,26 +1,23 @@
 filegroup {
     name: "gcc.lib",
     srcs: [
-        "lib/**/*",
-        "x86_64-linux/lib/**/*",
+      "lib/**/*",
+      "x86_64-linux/lib/**/*",
     ],
 }
-
 filegroup {
     name: "gcc.lib32",
     srcs: [
-        "x86_64-linux/lib32/**/*",
+      "x86_64-linux/lib32/**/*",
     ],
 }
-
 filegroup {
     name: "gcc.lib64",
     srcs: [
-        "lib64/**/*",
-        "x86_64-linux/lib64/**/*",
+      "lib64/**/*",
+      "x86_64-linux/lib64/**/*",
     ],
 }
-
 filegroup {
     name: "gcc.sysroot",
     srcs: ["sysroot/**/*"],
@@ -30,24 +27,4 @@ dirgroup {
     name: "trusty_dirgroup_prebuilts_gcc_linux-x86_host_x86_64-linux-glibc2.17-4.8",
     dirs: ["."],
     visibility: ["//trusty/vendor/google/aosp/scripts"],
-}
-
-// For use by old sdk tools that still need old versions of libncurses and
-// libtinfo. This version is no longer available on many newer host versions.
-filegroup {
-    name: "libncurses.so.5",
-    srcs: [
-        "sysroot/usr/lib/libncurses.so.5",
-        "sysroot/usr/lib/libncurses.so.5.9",
-    ],
-    visibility: ["//prebuilts/sdk/tools"],
-}
-
-filegroup {
-    name: "libtinfo.so.5",
-    srcs: [
-        "sysroot/usr/lib/libtinfo.so.5",
-        "sysroot/usr/lib/libtinfo.so.5.9",
-    ],
-    visibility: ["//prebuilts/sdk/tools"],
 }
