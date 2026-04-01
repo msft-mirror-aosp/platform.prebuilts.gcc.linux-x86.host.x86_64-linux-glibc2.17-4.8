@@ -32,22 +32,28 @@ enum {
   IPPROTO_PUP = 12,		/* PUP protocol				*/
   IPPROTO_UDP = 17,		/* User Datagram Protocol		*/
   IPPROTO_IDP = 22,		/* XNS IDP protocol			*/
+  IPPROTO_TP = 29,		/* SO Transport Protocol Class 4	*/
   IPPROTO_DCCP = 33,		/* Datagram Congestion Control Protocol */
+  IPPROTO_IPV6 = 41,		/* IPv6-in-IPv4 tunnelling		*/
   IPPROTO_RSVP = 46,		/* RSVP protocol			*/
   IPPROTO_GRE = 47,		/* Cisco GRE tunnels (rfc 1701,1702)	*/
-
-  IPPROTO_IPV6	 = 41,		/* IPv6-in-IPv4 tunnelling		*/
-
   IPPROTO_ESP = 50,            /* Encapsulation Security Payload protocol */
   IPPROTO_AH = 51,             /* Authentication Header protocol       */
+  IPPROTO_MTP = 92,		/* Multicast Transport Protocol		*/
   IPPROTO_BEETPH = 94,	       /* IP option pseudo header for BEET */
+  IPPROTO_ENCAP = 98,		/* Encapsulation Header			*/
   IPPROTO_PIM    = 103,		/* Protocol Independent Multicast	*/
-
   IPPROTO_COMP   = 108,                /* Compression Header protocol */
+  IPPROTO_L2TP = 115,		/* Layer 2 Tunnelling Protocol		*/
   IPPROTO_SCTP   = 132,		/* Stream Control Transport Protocol	*/
   IPPROTO_UDPLITE = 136,	/* UDP-Lite (RFC 3828)			*/
-
+  IPPROTO_MPLS = 137,		/* MPLS in IP (RFC 4023)		*/
+  IPPROTO_ETHERNET = 143,	/* Ethernet-within-IPv6 Encapsulation	*/
+  IPPROTO_AGGFRAG = 144,	/* AGGFRAG in ESP (RFC 9347)		*/
   IPPROTO_RAW	 = 255,		/* Raw IP packets			*/
+  IPPROTO_SMC = 256,		/* Shared Memory Communications		*/
+  IPPROTO_MPTCP = 262,		/* Multipath TCP connection		*/
+
   IPPROTO_MAX
 };
 
