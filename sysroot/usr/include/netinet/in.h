@@ -88,6 +88,8 @@ enum
 #define IPPROTO_UDPLITE		IPPROTO_UDPLITE
     IPPROTO_RAW = 255,	   /* Raw IP packets.  */
 #define IPPROTO_RAW		IPPROTO_RAW
+    IPPROTO_MPTCP = 262,   /* Multipath TCP connection.  */
+#define IPPROTO_MPTCP		IPPROTO_MPTCP
     IPPROTO_MAX
   };
 
@@ -194,6 +196,7 @@ struct in_addr
 
 
 /* IPv6 address */
+#ifndef _LINUX_IN6_H
 struct in6_addr
   {
     union
@@ -210,6 +213,7 @@ struct in6_addr
 # define s6_addr32		__in6_u.__u6_addr32
 #endif
   };
+#endif
 
 extern const struct in6_addr in6addr_any;        /* :: */
 extern const struct in6_addr in6addr_loopback;   /* ::1 */
@@ -271,6 +275,7 @@ struct ip_mreq_source
 
 
 /* Likewise, for IPv6.  */
+#ifndef _LINUX_IN6_H
 struct ipv6_mreq
   {
     /* IPv6 multicast address of group */
@@ -279,6 +284,7 @@ struct ipv6_mreq
     /* local interface */
     unsigned int ipv6mr_interface;
   };
+#endif
 
 
 #if defined __USE_MISC || defined __USE_GNU

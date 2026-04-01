@@ -27,6 +27,7 @@
  *	IPv6 address structure
  */
 
+#ifndef _NETINET_IN_H
 struct in6_addr {
 	union {
 		__u8		u6_addr8[16];
@@ -37,6 +38,7 @@ struct in6_addr {
 #define s6_addr16		in6_u.u6_addr16
 #define s6_addr32		in6_u.u6_addr32
 };
+#endif
 
 /* IPv6 Wildcard Address (::) and Loopback Address (::1) defined in RFC2553
  * NOTE: Be aware the IN6ADDR_* constants and in6addr_* externals are defined
@@ -51,6 +53,7 @@ struct sockaddr_in6 {
 	__u32			sin6_scope_id;  /* scope id (new in RFC2553) */
 };
 
+#ifndef _NETINET_IN_H
 struct ipv6_mreq {
 	/* IPv6 multicast address of group */
 	struct in6_addr ipv6mr_multiaddr;
@@ -58,6 +61,7 @@ struct ipv6_mreq {
 	/* local IPv6 address of interface */
 	int		ipv6mr_ifindex;
 };
+#endif
 
 #define ipv6mr_acaddr	ipv6mr_multiaddr
 
